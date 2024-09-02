@@ -13,7 +13,7 @@ License
 Required tools 
 To run this project, you need to have Python installed along with the following libraries:
 
-'''pip install torch torchvision pillow'''
+```pip install torch torchvision pillow```
 
 Requirements
 Python 3.x
@@ -30,7 +30,7 @@ Each subfolder in the sign directory represents a class (e.g., different peopleâ
 Set the Training Folder:
 Update the train_folder variable in the script to point to your dataset directory.
 
-'''train_folder = "C:/path/to/your/dataset/sign"'''
+```train_folder = "C:/path/to/your/dataset/sign"```
 
 Model Training
 Pre-trained Model:
@@ -46,7 +46,7 @@ Training Process:
 The model is trained on the specified dataset with the given configurations.
 Features of the VGG16 model are frozen to leverage the pre-trained weights.
 
-'''for epoch in range(num_epochs):
+    for epoch in range(num_epochs):
     for inputs, labels in train_loader:
         inputs, labels = inputs.to(device), labels.to(device)
 
@@ -57,9 +57,8 @@ Features of the VGG16 model are frozen to leverage the pre-trained weights.
         loss.backward()
         optimizer.step()
 
-    exp_lr_scheduler.step()'''
-    
-    
+    exp_lr_scheduler.step()
+   
 Image Classification
 After training the model, you can classify a new image using the classify_image function.
 
@@ -68,12 +67,17 @@ Provide the path to the image you want to classify.
 The image is processed and passed through the model to predict the class.
 The predicted class and its probability are printed.
 
-'''img_path = r"C:\path\to\your\image.png"
-classify_image(img_path)'''
-
-Example Output:
-Prediction: Mithul with probability: 85.23%
-
 Results
 The modelâ€™s performance can be evaluated by the accuracy of the predictions on test images.
 During training, the learning rate is adjusted using a scheduler to improve model performance.
+
+
+```
+img_path = r"C:\path\to\your\image.png"
+classify_image(img_path)```
+
+```Example Output:
+Prediction: Mithul with probability: 85.23%```
+
+
+
